@@ -8,15 +8,15 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 function MediaCard(props) {
-  console.log(props)
+  console.log(props.value)
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
+      {/* <CardMedia
         component="img"
         height="140"
         image="/static/images/cards/contemplative-reptile.jpg"
         alt="green iguana"
-      />
+      /> */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           Lizard
@@ -26,11 +26,11 @@ function MediaCard(props) {
           species, ranging across all continents except Antarctica
         </Typography>
       </CardContent>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small">Share</Button>
         <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+      </CardActions> */}
+    </Card>   
   )
 }
 
