@@ -1,16 +1,13 @@
 // import React from 'react'
 import * as React from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 function MediaCard(props) {
   console.log(props.title);
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 445, minWidth: 300 }}>
       {/* <CardMedia
         component="img"
         height="140"
@@ -18,10 +15,10 @@ function MediaCard(props) {
         alt="green iguana"
       /> */}
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography noWrap gutterBottom variant="h5" component="div">
           {props.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography noWrap variant="body2" color="text.secondary">
           {props.description}
         </Typography>
       </CardContent>

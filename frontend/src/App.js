@@ -19,24 +19,25 @@ function App() {
     axios.get("http://localhost:3000/blog/getblogs").then((response) => {
       console.log(response.data);
       setdata(response.data["data"]);
-      // console.log(response.data["data"]);
       console.log(data);
     });
-    // const response = axios.get("https://jsonplaceholder.typicode.com/posts");
-    // console.log(response);
   }, []);
 
   const compRet = (msg) => {
     if (msg === "HOME") {
       return (
-        <>
+        <div className="Center">
           {data.map((value) => {
             return (
               <div
+                className="Spacing"
                 onClick={() => {
                   setcurrblog(value);
                   console.log("clicked");
                   setpage("BLOG");
+                }}
+                style={{
+                  width: "auto",
                 }}
               >
                 <MediaCard
@@ -60,12 +61,26 @@ function App() {
           >
             NEW
           </Button>
-        </>
+        </div>
       );
     } else if (msg === "NEW") {
       return (
-        <>
+        <div className="Center">
           <NewBlog newblog={newblog} setnewblog={setnewblog} />
+          <Button
+            onClick={() => {
+              console.log("clicked");
+              setpage("HOME");
+            }}
+            style={{
+              position: "fixed",
+              bottom: "50px",
+              right: "150px",
+            }}
+            variant="contained"
+          >
+            Home
+          </Button>
           <Button
             onClick={async () => {
               console.log(newblog["title"]);
@@ -87,11 +102,11 @@ function App() {
           >
             PUBLISH
           </Button>
-        </>
+        </div>
       );
     } else if (msg === "BLOG") {
       return (
-        <>
+        <div className="Center">
           <Blog
             title={currblog["title"]}
             description={currblog["description"]}
@@ -111,7 +126,7 @@ function App() {
           >
             Home
           </Button>
-        </>
+        </div>
       );
     }
   };

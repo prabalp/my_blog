@@ -1,10 +1,9 @@
-import React from 'react'
+import React from "react";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import { Typography } from '@mui/material';
+import { Typography } from "@mui/material";
 
 function Blog(props) {
-  console.log(props)
+  console.log(props);
   return (
     <div>
       <Box
@@ -16,10 +15,9 @@ function Blog(props) {
           maxWidth: "100%",
         }}
       >
-        
         <Typography color="primary" variant="h3">
-        {props.title}
-      </Typography>
+          {props.title}
+        </Typography>
       </Box>
       <Box
         style={{
@@ -30,9 +28,7 @@ function Blog(props) {
           height: 500,
         }}
       >
-        <Typography  variant="h5">
-        {props.description}
-      </Typography>
+        <Typography variant="h5">{props.description}</Typography>
         {/* <TextField
         placeholder={props.description}
           multiline
@@ -44,7 +40,7 @@ function Blog(props) {
         /> */}
       </Box>
     </div>
-  )
+  );
 }
 
-export default Blog
+export default Blog;
