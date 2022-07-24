@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const BlogScheme = new mongoose.SchemaType({
+const BlogScheme = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -11,4 +11,4 @@ const BlogScheme = new mongoose.SchemaType({
   },
 });
 
-module.exports = mongoose.model("Cart", CartScheme);
+module.exports = mongoose.model("Blog", BlogScheme);
