@@ -15,12 +15,16 @@ function App() {
     description: "demo",
   });
 
-  useEffect(() => {
+  const getData = () => {
     axios.get("http://localhost:3000/blog/getblogs").then((response) => {
       console.log(response.data);
       setdata(response.data["data"]);
       console.log(data);
     });
+  };
+
+  useEffect(() => {
+    getData();
   }, []);
 
   const compRet = (msg) => {
@@ -88,6 +92,7 @@ function App() {
                 .post("http://localhost:3000/blog/addblog", newblog)
                 .then(() => {
                   setpage("HOME");
+                  getData();
                 })
                 .catch((error) => {
                   alert(error);

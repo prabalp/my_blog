@@ -12,7 +12,7 @@ module.exports.getBlogs = async (req, res) => {
 
 module.exports.addBlog = async (req, res) => {
   try {
-    if (req.body[title] === "demo") {
+    if (req.body["title"] === "demo") {
       return res.status(200).json(successmessage("No Blog Created"));
     }
     const blog = await Blog.create(req.body);

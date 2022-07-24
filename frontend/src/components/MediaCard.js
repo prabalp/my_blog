@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 function MediaCard(props) {
   console.log(props.title);
   return (
-    <Card sx={{ maxWidth: 445, minWidth: 300 }}>
+    <Card sx={{ maxWidth: 445, minWidth: 300, minHeight: 200, maxHeight: 250 }}>
       {/* <CardMedia
         component="img"
         height="140"
@@ -18,7 +18,7 @@ function MediaCard(props) {
         <Typography noWrap gutterBottom variant="h5" component="div">
           {props.title}
         </Typography>
-        <Typography noWrap variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary">
           {props.description}
         </Typography>
       </CardContent>
